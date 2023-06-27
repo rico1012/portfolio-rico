@@ -1,0 +1,46 @@
+.introduction {
+  margin-top: 30vh;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0;
+
+  h1
+  {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-right: 10px;
+  }
+
+  h3{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 1.5rem;
+  }
+
+  .introduction-name
+  {
+    color: #FB8500;
+  }
+
+  .introduction-line{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.photo
+{
+  //make a background an weird shape
+  .jagged-top {
+    stroke: white;
+    stroke-width: 4;
+    transition: 1s;
+  }
+
+}

@@ -1,5 +1,36 @@
 .spacer
 {
     flex: 1 1 auto;
-  font-family: 'Poppins', sans-serif;
+}
+
+mat-toolbar
+{
+  background: #fff;
+  border-bottom: gray 1px solid;
+  span
+  {
+    font-family: 'Poppins', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    a
+    {
+      color: #FB8500;
+    }
+  }
+
+  button
+  {
+    font-family: 'Poppins', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+
+  button:hover
+  {
+    color: #FB8500;
+    border-bottom: #FB8500 2px solid;
+    border-radius: 0px;
+  }
+
 }
