@@ -6,6 +6,7 @@ import {NavbarComponent} from "./navbar/navbar.component";
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing-module";
 import {HomeModule} from "./home/home.module";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {HomeModule} from "./home/home.module";
     AppRoutingModule,
     BrowserModule,
     RouterModule,
-    HomeModule
+    HomeModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

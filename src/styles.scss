@@ -63,3 +63,6 @@ $light-theme: mat.define-light-theme(( color: ( primary: $light-primary, accent:
 @include mat.progress-spinner-theme($light-theme);
 @include mat.chips-theme($light-theme);
 @include mat.tabs-theme($light-theme);
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
