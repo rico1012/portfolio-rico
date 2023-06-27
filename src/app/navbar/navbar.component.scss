@@ -18,6 +18,11 @@ mat-toolbar
     }
   }
 
+  span:hover
+  {
+    cursor: pointer;
+  }
+
   button
   {
     font-family: 'Poppins', serif;

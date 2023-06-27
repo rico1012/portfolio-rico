@@ -1,0 +1,71 @@
+h1
+{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+h2
+{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+p
+{
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+}
+
+mat-card
+{
+  background: white;
+  margin-bottom: 20px;
+  width: 350px;
+  font-family: 'Lato', sans-serif;
+}
+
+mat-card-title
+{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  border-bottom: #FB8500 solid 1px;
+}
+
+a
+{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  color: #FB8500;
+}
+
+.about
+{
+  margin-left: 10vw;
+}
+
+.cards
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 10vw;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .row
+  {
+    margin-left: 0vw;
+  }
+
+  .cards
+  {
+    margin-right: 0vw;
+  }
+
+}
