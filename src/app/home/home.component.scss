@@ -1,7 +1,7 @@
 .introduction {
-  margin-top: 30vh;
+  margin-top: 25vh;
   margin-bottom: 20px;
-  margin-left: 50px;
+  margin-left: 10vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -12,7 +12,7 @@
     color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     margin-right: 10px;
   }
 
@@ -43,4 +43,54 @@
     transition: 1s;
   }
 
+}
+
+//change for mobile view
+@media only screen and (max-width: 600px) {
+  .introduction {
+    margin-top: 10vh;
+    margin-bottom: 20px;
+    margin-left: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 0;
+
+    h1
+    {
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 2.5rem;
+      margin-right: 10px;
+    }
+
+    h3{
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 200;
+      font-size: 1rem;
+    }
+
+    .introduction-name
+    {
+      color: #FB8500;
+    }
+
+    .introduction-line{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .photo
+  {
+    //make a background an weird shape
+    .jagged-top {
+      stroke: white;
+      stroke-width: 4;
+      transition: 1s;
+    }
+
+  }
 }
