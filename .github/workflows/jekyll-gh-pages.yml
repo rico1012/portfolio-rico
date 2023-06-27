@@ -27,6 +27,7 @@ jobs:
         with:
           target_branch: gh-pages
           build_dir: dist/portfolio-rico
+          static/CNAME: ricovossestein.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
