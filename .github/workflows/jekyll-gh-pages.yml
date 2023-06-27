@@ -19,21 +19,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
-
-      - name: Tests
-        run: npm run test:prod
-
-      - name: Replace secret
-        uses: cschleiden/replace-tokens@v1
-        with:
-          tokenPrefix: '{'
-          tokenSuffix: '}'
-          files: 'src/environments/environment.prod.ts'
-        env:
-          SECRET_API_KEY: ${{ secrets.API_KEY}}
-
       - name: Build
         run: npm run build:prod
 
@@ -41,7 +26,7 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
-          build_dir: dist/weather-app
+          build_dir: dist/portfolio-rico
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
