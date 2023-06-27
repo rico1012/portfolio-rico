@@ -5,19 +5,20 @@ import { MyMaterialModule} from "./my-material.module";
 import {NavbarComponent} from "./navbar/navbar.component";
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing-module";
+import {HomeModule} from "./home/home.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     MyMaterialModule,
     AppRoutingModule,
     BrowserModule,
     RouterModule,
-
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
