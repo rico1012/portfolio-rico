@@ -1,0 +1,50 @@
+h1
+{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+h2
+{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+a
+{
+  color: #FB8500 !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+//place class photo left and class contact-info right using flexbox
+
+.contact-container
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 10vw;
+}
+
+.photo
+{
+  width: 30vw;
+  margin-left: 10vw;
+  margin-right: 5vw;
+  margin-top: 5vh;
+  height: calc(70vh);
+  background-color: #FB8500;
+}
+
+.contact-info
+{
+  width: 55vw;
+  height: 100%;
+  margin-top: 5vh;
+
+}
+
