@@ -66,3 +66,25 @@ $light-theme: mat.define-light-theme(( color: ( primary: $light-primary, accent:
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+.red-snackbar {
+  --mdc-snackbar-container-color: #F44336;
+  --mat-mdc-snack-bar-button-color: #fff;
+  --mdc-snackbar-supporting-text-color: #fff;
+}
+.red-snackbar button {
+  background-color: #F44336;
+  color: white !important;
+  border: none;
+}
+
+.green-snackbar {
+  --mdc-snackbar-container-color: #4CAF50;
+  --mat-mdc-snack-bar-button-color: #fff;
+  --mdc-snackbar-supporting-text-color: #fff;
+}
+.green-snackbar button {
+  background-color: #4CAF50;
+  color: white !important;
+  border: none;
+}
