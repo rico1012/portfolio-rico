@@ -7,6 +7,8 @@ import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing-module";
 import {HomeModule} from "./home/home.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ContactModule} from "./contact/contact.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -21,6 +23,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RouterModule,
     HomeModule,
     NgbModule,
+    ContactModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
