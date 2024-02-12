@@ -15,7 +15,7 @@ export class AboutComponent {
   constructor(private meta: Meta) {}
 
   ngOnInit(): void {
-    const birthday = new Date(2003, 11, 1);
+    const birthday = new Date(2003, 12, 1);
     const today = new Date();
     this._age = today.getFullYear() - birthday.getFullYear();
     const m = today.getMonth() - birthday.getMonth();
