@@ -8,26 +8,18 @@ import {AppRoutingModule} from "./app-routing-module";
 import {HomeModule} from "./home/home.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ContactModule} from "./contact/contact.module";
-import {HttpClientModule} from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-  ],
-  imports: [
-    MyMaterialModule,
-    AppRoutingModule,
-    BrowserModule,
-    RouterModule,
-    HomeModule,
-    NgbModule,
-    ContactModule,
-    HttpClientModule
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        NavbarComponent,
+    ],
+    bootstrap: [AppComponent], imports: [MyMaterialModule,
+        AppRoutingModule,
+        BrowserModule,
+        RouterModule,
+        HomeModule,
+        NgbModule,
+        ContactModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
