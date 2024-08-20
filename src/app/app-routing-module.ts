@@ -4,6 +4,7 @@ import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
 import {PortfolioComponent} from "./portfolio/portfolio.component";
 import {HomeComponent} from "./home/home.component";
+import {DisposibleComponent} from "./disposible/disposible.component";
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'portfolio',
     component: PortfolioComponent,
+  },
+  {
+    path: 'disposible',
+    component: DisposibleComponent
   },
   {path: '*',
     redirectTo: '',

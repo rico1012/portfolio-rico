@@ -1,0 +1,20 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+canvas {
+  margin-bottom: 20px;
+}
+
+#snapshot-btn {
+  padding: 10px 20px;
+  background-color: #f4a460;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}

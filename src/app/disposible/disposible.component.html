@@ -1,1 +1,9 @@
-<p>disposible works!</p>
+<div id="container">
+  <video #video width="640" height="480" autoplay></video>
+  <canvas #imageCanvas id="imageCanvas" width="640" height="480"></canvas>
+  <canvas #lutCanvas id="lutCanvas" width="512" height="512" style="display: none;"></canvas>
+
+  <canvas #gradientCanvas id="gradientCanvas" width="640" height="480" style="display: none;"></canvas>
+  <canvas #resultCanvas id="resultCanvas" width="640" height="480"></canvas>
+  <button id="snapshot-btn" (click)="captureAndApplyLUT()">Capture and Apply LUT Effect</button>
+</div>
