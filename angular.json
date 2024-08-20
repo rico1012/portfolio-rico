@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "portfolio-rico:build:production"
+              "buildTarget": "portfolio-rico:build:production"
             },
             "development": {
-              "browserTarget": "portfolio-rico:build:development"
+              "buildTarget": "portfolio-rico:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "portfolio-rico:build"
+            "buildTarget": "portfolio-rico:build"
           }
         },
         "test": {
