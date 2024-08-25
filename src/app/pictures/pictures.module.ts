@@ -2,20 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {MyMaterialModule} from "../my-material.module";
-import {DisposibleComponent} from "./disposible.component";
+import {PicturesComponent} from "./pictures.component";
+import {BrowserModule} from "@angular/platform-browser";
 
 @NgModule({
   declarations: [
-    DisposibleComponent,
+    PicturesComponent
+
   ],
   imports: [
     CommonModule,
     FormsModule,
     MyMaterialModule,
+    BrowserModule
     // CLI adds AppRoutingModule to the AppModule's imports array
   ],
   providers: [],
-  bootstrap: [DisposibleComponent]
+  exports: [PicturesComponent],
+  bootstrap: [PicturesComponent]
 })
-export class DisposibleModule { }
+export class PicturesModule { }
 

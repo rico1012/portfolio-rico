@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
 @include mat.core();
-@include mat.legacy-core();
 
 $md-mcgpalette0: (
   50 : #fff0e0,
@@ -41,9 +40,9 @@ $md-mcgpalette0: (
 
 
 // Define a light theme
-$light-primary: mat.define-palette($md-mcgpalette0);
-$light-accent: mat.define-palette($md-mcgpalette0, 50);
-$light-theme: mat.define-light-theme(( color: ( primary: $light-primary, accent: $light-accent ) ));
+$light-primary: mat.m2-define-palette($md-mcgpalette0);
+$light-accent: mat.m2-define-palette($md-mcgpalette0, 50);
+$light-theme: mat.m2-define-light-theme(( color: ( primary: $light-primary, accent: $light-accent ) ));
 
 // Apply the dark theme by default
 @include mat.core-theme($light-theme);

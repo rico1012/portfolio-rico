@@ -1,16 +1,35 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {ImageService} from "../services/image.service";
+import {GroupService} from "../services/group.service";
+import {ActivatedRoute} from "@angular/router";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
   selector: 'app-disposible',
-  templateUrl: './disposible.component.html',
-  styleUrls: ['./disposible.component.scss']
+  templateUrl: './disposable.component.html',
+  styleUrls: ['./disposable.component.scss']
 })
-export class DisposibleComponent implements AfterViewInit {
+export class DisposableComponent implements AfterViewInit {
   @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
   @ViewChild('imageCanvas') imageCanvas!: ElementRef<HTMLCanvasElement>;
   @ViewChild('lutCanvas') lutCanvas!: ElementRef<HTMLCanvasElement>;
   @ViewChild('resultCanvas') resultCanvas!: ElementRef<HTMLCanvasElement>;
   @ViewChild('gradientCanvas') gradientCanvas!: ElementRef<HTMLCanvasElement>;
+
+  constructor(
+    private imageService: ImageService,
+    private groupservice: GroupService,
+    private fireAuth: AngularFireAuth,
+    ) {
+    this.fireAuth.user.subscribe(async currentUser => {
+      this.currentEmail = currentUser?.email ?? '';
+      this.picturesLeft = await this.groupservice.picturesLeftToTake(currentUser?.email ?? 'no email found')
+    });
+  }
+
+  picturesLeft = 0;
+  currentEmail = ''
+
 
   ngAfterViewInit() {
     this.setupCamera();
@@ -30,7 +49,7 @@ export class DisposibleComponent implements AfterViewInit {
       });
   }
 
-  captureAndApplyLUT() {
+  async captureAndApplyLUT() {
     const videoElement = this.video.nativeElement;
     const canvasElement = this.imageCanvas.nativeElement;
     const ctx = canvasElement.getContext('2d')!;
@@ -40,6 +59,14 @@ export class DisposibleComponent implements AfterViewInit {
 
     // Apply the LUT effect to the captured image
     this.applyLUT('imageCanvas', 'lutCanvas', 'resultCanvas');
+    this.video.nativeElement.classList.add('flash');
+    setTimeout(() => {
+      this.video.nativeElement.classList.remove('flash');
+    }, 100);
+    this.imageService.uploadImage(this.resultCanvas.nativeElement.toDataURL());
+    this.picturesLeft -= 1;
+
+
   }
 
   loadLUT(lutPath: string, gradientPath: string) {
