@@ -17,6 +17,8 @@ import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/compat/fir
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {FormsModule} from "@angular/forms";
 import {PicturesModule} from "./pictures/pictures.module";
+import {WebcamModule} from 'ngx-webcam';
+import {DisposableModule} from "./disposible/disposable.module";
 
 
 @NgModule({ declarations: [
@@ -37,6 +39,8 @@ import {PicturesModule} from "./pictures/pictures.module";
         NgbModule,
         ContactModule,
         LoginModule,
-    PicturesModule
+    PicturesModule,
+    WebcamModule,
+    DisposableModule
   ], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
