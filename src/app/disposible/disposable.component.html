@@ -1,7 +1,17 @@
 <div class="camera-container">
   <div class="camera-body">
+    <div class="camera-settings">
+      <button (click)="flipCamera()" id="switch-camera">flip camera</button>
+    </div>
     <div class="camera-lens">
-      <video #video width="640" height="480" autoplay></video>
+      <video #video width="640" height="480"
+             autoplay
+             muted
+             playsinline
+             loop
+             controls
+             webkit-playsinline
+      ></video>
       <canvas #imageCanvas id="imageCanvas" width="640" height="480"></canvas>
       <canvas #lutCanvas id="lutCanvas" width="512" height="512" ></canvas>
 

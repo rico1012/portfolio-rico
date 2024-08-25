@@ -20,7 +20,7 @@ export class DisposableComponent implements AfterViewInit {
     private imageService: ImageService,
     private groupservice: GroupService,
     private fireAuth: AngularFireAuth,
-    ) {
+  ) {
     this.fireAuth.user.subscribe(async currentUser => {
       this.currentEmail = currentUser?.email ?? '';
       this.picturesLeft = await this.groupservice.picturesLeftToTake(currentUser?.email ?? 'no email found')
@@ -29,6 +29,8 @@ export class DisposableComponent implements AfterViewInit {
 
   picturesLeft = 0;
   currentEmail = ''
+
+  currentposition = "user";
 
 
   ngAfterViewInit() {
@@ -39,7 +41,13 @@ export class DisposableComponent implements AfterViewInit {
   setupCamera() {
     const videoElement = this.video.nativeElement;
 
-    navigator.mediaDevices.getUserMedia({ video: true })
+    navigator.mediaDevices.getUserMedia({
+      video: {
+        facingMode: {
+          exact: "user"
+        }
+      }
+    })
       .then((stream) => {
         videoElement.srcObject = stream;
         videoElement.play();
@@ -47,6 +55,34 @@ export class DisposableComponent implements AfterViewInit {
       .catch((err) => {
         console.error("Error accessing the camera: " + err);
       });
+  }
+
+  flipCamera() {
+    const videoElement = this.video.nativeElement;
+    let value = '';
+
+    if (this.currentposition === 'user') {
+      value = 'environment'
+    } else {
+      value = 'user'
+    }
+
+    this.currentposition = value;
+    navigator.mediaDevices.getUserMedia({
+      video: {
+        facingMode: {
+          exact: value
+        }
+      }
+    })
+      .then((stream) => {
+        videoElement.srcObject = stream;
+        videoElement.play();
+      })
+      .catch((err) => {
+        console.error("Error accessing the camera: " + err);
+      });
+
   }
 
   async captureAndApplyLUT() {
