@@ -1,0 +1,16 @@
+<div class="camera-container">
+  <div class="camera-body">
+    <div class="camera-lens">
+      <video #video width="640" height="480" autoplay></video>
+      <canvas #imageCanvas id="imageCanvas" width="640" height="480"></canvas>
+      <canvas #lutCanvas id="lutCanvas" width="512" height="512" ></canvas>
+
+      <canvas #gradientCanvas id="gradientCanvas" width="640" height="480" ></canvas>
+      <canvas #resultCanvas id="resultCanvas" width="640" height="480"></canvas>
+    </div>
+    <div class="camera-controls">
+      <button id="capture-button" (click)="captureAndApplyLUT()">Capture</button>
+      <div class="picture-counter">Pictures Left: <span id="counter">{{picturesLeft}}</span></div>
+    </div>
+  </div>
+</div>

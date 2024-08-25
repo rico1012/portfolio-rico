@@ -1,0 +1,7 @@
+<div class="photo-gallery">
+  <div class="photo-card" *ngFor="let photo of photos">
+    <img [src]="photo.url" alt="Photo by {{photo.photographer}}">
+    <div class="photographer">{{photo.photographer}}</div>
+  </div>
+</div>
+
