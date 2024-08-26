@@ -4,19 +4,19 @@
       <button (click)="flipCamera()" id="switch-camera">flip camera</button>
     </div>
     <div class="camera-lens">
-      <video #video width="640" height="480"
-             autoplay
+      <video #video width="1440" height="1920"
+             autoPlay
              muted
              playsinline
              loop
              controls
              webkit-playsinline
       ></video>
-      <canvas #imageCanvas id="imageCanvas" width="640" height="480"></canvas>
+      <canvas #imageCanvas id="imageCanvas" width="1440" height="1920"></canvas>
       <canvas #lutCanvas id="lutCanvas" width="512" height="512" ></canvas>
 
-      <canvas #gradientCanvas id="gradientCanvas" width="640" height="480" ></canvas>
-      <canvas #resultCanvas id="resultCanvas" width="640" height="480"></canvas>
+      <canvas #gradientCanvas id="gradientCanvas" width="1440" height="1920" ></canvas>
+      <canvas #resultCanvas id="resultCanvas" width="1440" height="1920"></canvas>
     </div>
     <div class="camera-controls">
       <button id="capture-button" (click)="captureAndApplyLUT()">Capture</button>

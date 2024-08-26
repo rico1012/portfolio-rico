@@ -127,7 +127,7 @@ export class DisposableComponent implements AfterViewInit {
     const imageContext = (document.getElementById(imageID) as HTMLCanvasElement)!.getContext("2d");
     const lutContext = (document.getElementById(lutID) as HTMLCanvasElement)!.getContext('2d')!;
     const resultContext = (document.getElementById(resultID) as HTMLCanvasElement)!.getContext('2d')!;
-    const imageData = imageContext?.getImageData(0, 0, 640, 480); // Assuming the video frame size
+    const imageData = imageContext?.getImageData(0, 0, 1440, 1920); // Assuming the video frame size
     const lutData = lutContext.getImageData(0, 0, 512, 512);
 
     if (imageData){
