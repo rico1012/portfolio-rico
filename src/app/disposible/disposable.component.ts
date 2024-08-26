@@ -25,6 +25,9 @@ export class DisposableComponent implements AfterViewInit {
       this.currentEmail = currentUser?.email ?? '';
       this.picturesLeft = await this.groupservice.picturesLeftToTake(currentUser?.email ?? 'no email found')
     });
+    const element = document.getElementById('counter');
+    if (element)
+      element.scrollTop = element.scrollHeight;
   }
 
   picturesLeft = 0;
@@ -127,7 +130,7 @@ export class DisposableComponent implements AfterViewInit {
     const imageContext = (document.getElementById(imageID) as HTMLCanvasElement)!.getContext("2d");
     const lutContext = (document.getElementById(lutID) as HTMLCanvasElement)!.getContext('2d')!;
     const resultContext = (document.getElementById(resultID) as HTMLCanvasElement)!.getContext('2d')!;
-    const imageData = imageContext?.getImageData(0, 0, 1440, 1920); // Assuming the video frame size
+    const imageData = imageContext?.getImageData(0, 0, 1512, 2016); // Assuming the video frame size
     const lutData = lutContext.getImageData(0, 0, 512, 512);
 
     if (imageData){
