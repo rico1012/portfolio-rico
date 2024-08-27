@@ -17,7 +17,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 5vh;
   box-sizing: border-box;
   position: relative;
 }
@@ -28,6 +27,7 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  padding: 5vh;
 }
 
 .camera-lens {
@@ -87,6 +87,16 @@ video {
 /* Flash effect */
 .flash {
   animation: flashAnimation 0.1s ease;
+}
+
+.camera-settings{
+  button{
+    background: white;
+    border-color: #FB8500;
+    width: 100%;
+    border-radius: 15px;
+    color: gray;
+  }
 }
 
 @keyframes flashAnimation {
