@@ -37,4 +37,6 @@ export class ImageService {
       await this.groupService.addPictureToGroup(await r.ref.getDownloadURL())
     });
   }
+
+
 }
