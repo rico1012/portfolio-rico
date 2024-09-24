@@ -23,12 +23,21 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
+        uses: JamesIves/github-pages-deploy-action@releases/v2
         with:
-          target_branch: gh-pages
-          build_dir: dist/portfolio-rico
-          static/CNAME: ricovossestein.com
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          BASE_BRANCH: master
+          FOLDER: dist/portfolio-rico
+
+
+#      - name: Deploy to GitHub Pages
+#        uses: crazy-max/ghaction-github-pages@v3
+#        with:
+#          target_branch: gh-pages
+#          build_dir: dist/portfolio-rico
+#          static/CNAME: ricovossestein.com
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
